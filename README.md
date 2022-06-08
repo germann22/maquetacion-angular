@@ -1,11 +1,11 @@
-# Tipografia
- - La tipo la he bajado no esta toda entera, falta 600, 700 y alguna mas.
+# Tipografía
+- La tipo la he bajado no está toda entera, falta 600, 700 y alguna más.
 # Mejoras
- - Versión Tablet se puede mejorar, en algun section por ejemplo en el de perks se rompe un pelin.
- - El footer esta como campo texto no como vinculos
- - Sería ideal crear componentes para el acordeon y el listado de productos
-- El pattern se podria hacer manual sin tener que pasar un SVG
-- El menu mobile se podría mejorar
+- Versión Tablet se puede mejorar, en algún section por ejemplo en el de perks se rompe un pelín.
+- El footer está como campo texto no como vínculos.
+- Sería ideal crear componentes para el acordeón y el listado de productos.
+- El pattern se podría hacer manual sin tener que pasar un SVG.
+- El menu mobile se podría mejorar.
 
 # Instalación
 
