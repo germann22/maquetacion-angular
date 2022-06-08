@@ -1,0 +1,10 @@
+.container {
+    padding-left: rem(16px);
+    padding-right: rem(16px);
+    max-width: rem(1400px);
+    margin: 0 auto;
+    
+    @include breakpoint-up(medium) {
+
+    }
+}

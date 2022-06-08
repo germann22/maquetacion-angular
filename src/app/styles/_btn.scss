@@ -1,0 +1,50 @@
+@import "./variables";
+
+.btn-arrow {
+  cursor: pointer;
+  padding: rem(16px) rem(32px); 
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 16px;
+  border: 0px;
+  color: $neutral-04;
+  font-size: rem(18px);
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  img {
+    transition: all 0.3s ease-in-out;
+
+  }
+  &:hover {
+    filter: saturate(1.3);
+    img {
+      transform: translateX(25%);
+
+    }
+  }
+  &.blue-04 {
+    background-color: $blue-04;
+  }
+  &.blue-02 {
+    background-color: $blue-02;
+  }
+}
+
+.btn-border {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  background-color: transparent;
+  
+  &.blue-03 {
+    border: 2px solid $blue-03;
+    color: $blue-03;
+    font-size: rem(16px);
+    font-weight: 700;
+    }
+}

@@ -1,0 +1,79 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.footer {
+   margin-top: rem(64px);
+   background-color: $blue-05;
+   padding-bottom: rem(48px);
+   padding-top: rem(64px);
+
+   .footer-content {
+       @include breakpoint-up(medium) {
+           display: flex;
+           justify-content: space-between;
+            gap: rem(150px);
+       }
+       .logo {
+        text-align: center;
+        padding: 0rem 0rem rem(64px);
+       }
+       .categories {
+           display: grid;
+           grid-template-columns: 1fr minmax(auto, 57%);
+           @include breakpoint-up(medium) {
+            grid-template-columns: repeat(auto-fill, minmax(min(8rem, 100%), 1fr));
+            gap: 2rem;
+            width: 100%;
+           }
+           .links{
+               display: flex;
+               flex-direction: column;
+               margin-top: rem(16px);
+               @include breakpoint-up(medium) {
+                margin-top: 0px;
+               }
+               p.category-title {
+                   margin-bottom: rem(8px);
+                   font-weight: 700;
+                   color: $blue-02;
+                    margin-top: 0rem;
+                    height: 30px;
+               }
+               a {
+                   margin-bottom: rem(8px);
+               }
+               p {
+                   &.title {
+                       margin-top: 0rem;
+                       color: $blue-03;
+                       text-transform: uppercase;
+
+                   }
+               }
+           }
+           .title-section {
+               display: flex;
+               flex-direction: row;
+               gap: 2rem;
+
+               .title-text {
+                   display: flex;
+                   flex-direction: column;
+               }
+           }
+       }
+   }
+   .social {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       margin-top: rem(32px);
+       padding-top: rem(32px);
+       font-size: rem(14px);
+       border-top: 1px solid rgba($blue-02, 0.3);
+       .social-icons {
+           display: flex;
+            gap: rem(48px)
+        }
+   }
+}

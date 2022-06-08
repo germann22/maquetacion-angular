@@ -1,0 +1,51 @@
+<header class="header container">
+
+    <nav class="flex flex-ai-c flex-jc-sb">
+      
+      <a class="logo">
+        <img src="assets/img/logo.svg"
+             width="68px" height="40px"/>
+      </a>
+  
+      <!-- Desktop -->
+      <div class="menu-desktop flex flex-jc-sb flex-ai-c hide-mobile">
+        <div class="links">
+            <a>Sección 1</a>
+            <a>Sección 2</a>
+            <a>Sección 3</a>
+            <a>Sección 4</a>
+            <a>Sección 5</a>
+        </div>
+      </div>
+  
+    <!-- Mobile -->
+      <div class="menu-contract flex flex-ai-c flex-jc-fe hide-desktop">
+        <a (click)="opened = !opened"
+            class="hamburger"
+            [ngClass]="{
+                'closed': !opened,
+                'open': opened
+            }">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>  
+      </div>
+  
+    </nav>
+    <div id="menu-mobile" 
+    [ngClass]="{
+        'slide-out': !opened,
+        'opened slide-in': opened
+      }">
+
+      <div class="links">
+        <a>Sección 1</a>
+        <a>Sección 2</a>
+        <a>Sección 3</a>
+        <a>Sección 4</a>
+        <a>Sección 5</a>
+      </div>
+    </div>
+
+  </header>

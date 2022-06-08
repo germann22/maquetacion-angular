@@ -1,0 +1,88 @@
+@import "mixins";
+@import "fonts";
+@import "variables";
+
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+    @include breakpoint-down(large) {
+        font-size: 90%;
+    }
+}
+body {
+    margin: 0px;
+}
+
+*, *::before, *::after {
+    font-family: 'Proxima-Nova', sans-serif;
+    box-sizing: inherit;
+}
+
+.hide-mobile {
+    @include breakpoint-down(medium) {
+        display: none !important;
+    }
+}
+
+.hide-desktop {
+    @include breakpoint-up(large) {
+        display: none !important;
+    }
+}
+
+
+//MATERIAL ANGULAR ACCORDION CUSTOM STYLE
+.accordion-item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    &:not(:last-child) {
+        margin-bottom: rem(16px);
+    }
+}
+
+.accordion-item-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(12px) rem(16px);
+    background-color: $neutral-04;
+    border: 1px solid $neutral-02;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: rem(24px);
+    color: $blue-02;
+
+    &.selected {
+        background-color: $blue-05;
+        border: none;
+        border-radius: 6px 6px 0px 0px;
+    }
+}
+
+.accordion-item-description {
+    background-image: url("../../assets/img/icons/arrow.svg");
+    background-repeat: no-repeat;
+    padding: 7px;
+    &.up {
+        transform: rotate(271deg);
+    }
+}
+
+.accordion-item-body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: rem(16px);
+    border: 1px solid $neutral-02;
+    border-top: none;
+    padding: rem(16px);
+    font-weight: 400;
+    font-size: rem(18px);
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.003em;
+    color: $blue-01;
+}

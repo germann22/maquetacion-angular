@@ -1,0 +1,31 @@
+
+@media (min-width: 64em) { }
+// 640px, 1020px, 1400px
+$breakpoints-up: ("medium": "40em", "large": "64em", "xlarge": "87.5em");
+$breakpoints-down: ("small": "39.987em", "medium": "63.987em", "large": "87.85em");
+
+@mixin breakpoint-up($size) {
+    @media (min-width: map-get($breakpoints-up, $size)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size) {
+    @media (max-width: map-get($breakpoints-down, $size)) {
+        @content;
+    }
+}
+
+
+//Convert PX to REM
+
+$html-font-size: 16px;
+
+@function stripUnit($value) {
+    $sumValue : $value *0+1;
+    @return calc($value / $sumValue);
+}
+
+@function rem($pxValue) {
+    @return #{calc(stripUnit($pxValue) / stripUnit($html-font-size))}rem;
+}

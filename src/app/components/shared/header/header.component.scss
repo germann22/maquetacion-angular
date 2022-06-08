@@ -1,0 +1,148 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+
+.header {
+    padding: rem(24px) rem(16px);
+    @include breakpoint-down(large) {
+      font-size: 90%;
+    }
+}
+
+
+  .menu {
+  
+    &-desktop {
+      width: 100%;
+      z-index: 9;
+      .contract {
+        width: 65%;
+        justify-content: flex-end;
+      }
+      .links {
+        width: 100%;
+        margin-left: 5px;
+        a {
+          cursor: pointer;
+          margin-left: rem(32px);
+          font-weight: 700;
+          display: inline-flex;
+          color: $blue-02;
+          &:hover {
+            color: $blue-04;
+          }
+          &.active {
+
+            &:hover{
+              cursor: default;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+  .hamburger {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-left: 2rem;
+      padding: 0rem rem(12px);
+    > span {
+      height: 2px;
+      width: 30px;
+      border-radius: 50px;
+      transition: all 300ms ease-in-out;
+      transform-origin: 0.1rem 0.08rem;
+      background-color: $blue-02;
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+
+    &.open {
+      > span:first-child {
+        transform: rotate(50deg);
+      }
+
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+
+      > span:last-child {
+        transform: rotate(-50deg);
+        width: 30px;
+      }
+    }
+
+
+  }
+
+
+//Menu opened
+
+#menu-mobile {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  font-weight: 600;
+  line-height: 60px;
+  padding: 20px 40px;
+  position: fixed;
+  background-color: white;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0px 4px 20px rgb(0 0 0 / 10%);
+  border-radius: 16px;
+  left: 16px;
+  right: 16px;
+
+  top: 100px;
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    font-size: rem(24px);
+    line-height: 32px;
+    a {
+      color: $blue-02;
+      padding: rem(24px);
+      &:not(:last-child) {
+        border-bottom: 1px solid #EEEEEE;
+      }
+    }
+  }
+
+  &.slide-in {
+    visibility: visible;
+    animation: slide-in 0.3s forwards;
+    -webkit-animation: slide-in 0.3s forwards;
+  }
+  &.slide-out {
+    animation: slide-out 0.3s forwards;
+    -webkit-animation: slide-out 0.3s forwards;
+  }
+}
+
+
+@keyframes slide-in {
+  100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+  100% { -webkit-transform: translateX(0%); }
+}
+  
+@keyframes slide-out {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+
+@-webkit-keyframes slide-out {
+  0% { -webkit-transform: translateX(0%); }
+  100% { -webkit-transform: translateX(100%); }
+}
